@@ -1,0 +1,18 @@
+.btn-read {
+    background-color: red;
+}
+
+.btn-brand {
+    border-color: none;
+    border-radius: 50px;
+    width: 120px;
+    height: 60px
+}
+
+.btn-view {
+    background-color: #2cb978;
+}
+
+.btn-brand:hover {
+    background-color: #071e3d;
+}

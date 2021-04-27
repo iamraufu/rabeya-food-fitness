@@ -1,10 +1,14 @@
+import './Header.css';
 import React from 'react';
+import BusinessInfo from '../BusinessInfo/BusinessInfo';
+import HeaderMain from '../HeaderMain/HeaderMain';
 
 const Header = () => {
       return (
-            <div>
-                  <h1>Header</h1>
-            </div>
+            <main className='header-container'>
+                  <HeaderMain />
+                  <BusinessInfo />
+            </main>
       );
 };
 
