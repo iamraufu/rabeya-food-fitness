@@ -1,6 +1,7 @@
 # Rabeya's Food and Fitness Center
 
-Rabeya's Food and Fitness Center is Country's First ever Complex site where anyone can get nutritionist help along healthy food diet.
+**Rabeya's Food and Fitness Center** is Country's First ever Complex site where anyone can get nutritionist help along healthy food diet.
+
 
 ## Features:
 
@@ -15,12 +16,15 @@ Rabeya's Food and Fitness Center is Country's First ever Complex site where anyo
                   <li>Footer</li>
             </ul>
       </li>
+      <br>
       <li>
-            If User logged in or click “Buy Now” it will redirect to product details and later to product/ service detail page and if user not logged in it will take user to log in page, after login, user will be taken to details page. **(Firebase Authentication)**
+            If User logged in or click “Buy Now” it will redirect to product details and later to product/ service detail page and if user not logged in it will take user to log in page, after login, user will be taken to details page. (<b>Firebase Authentication</b>)
       </li>
+      <br>
       <li>
-            After details user will be able to buy or remove the product. After buy user will give name, address, phone number and product name and price will be saved to MongoDB server. Payment will be received through credit card. **(Stripe Payment Gateway)**
+            After details user will be able to buy or remove the product. After buy user will give name, address, phone number and product name and price will be saved to MongoDB server. Payment will be received through credit card. (<b>Stripe Payment Gateway</b>)
       </li>
+      <br>
       <li>
             After Login -> User and Admin Both will be able to view Dashboard where the dashboard will be different for both user and admin.
             <ul>
@@ -46,6 +50,7 @@ Rabeya's Food and Fitness Center is Country's First ever Complex site where anyo
       </li>
 </ol>
 
+
 ### Bonus
 
 <ol>
@@ -53,11 +58,12 @@ Rabeya's Food and Fitness Center is Country's First ever Complex site where anyo
       <li>Mostly I will make the UI Responsive</li>
 </ol>
 
+
 ## Technology
 
 <ul>
-      <li>**Frontend**: React JS, Bootstrap or any other framework like Material UI, Tailwind CSS</li>
-      <li>**Backend**: Node JS, Express JS</li>
-      <li>**Database**: MongoDB</li>
-      <li>**Authentication**: Firebase</li>
+      <li><b>Frontend</b>: React JS, Bootstrap or any other framework like Material UI, Tailwind CSS</li>
+      <li><b>Backend</b>: Node JS, Express JS</li>
+      <li><b>Database</b>: MongoDB</li>
+      <li><b>Authentication</b>: Firebase</li>
 </ul>
