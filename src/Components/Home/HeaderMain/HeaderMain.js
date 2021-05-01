@@ -14,8 +14,8 @@ const HeaderMain = () => {
                         The best way to take back responsibility for your health is to throw away the "band-aid" approach and introduce some prevention. By not relying upon short term fixes for long-term problems, you feel better and are able to enjoy life more. It's your body; it's your health, demand the very best for yourself.
                         </p>
                         <div className="d-flex mt-5">
-                              <Link className='ps-5' to='/appointment'><button className='btn btn-read btn-brand text-white fw-bold'>Read more</button></Link>
-                              <Link className='ps-5' to='/appointment'><button className='btn btn-view btn-brand text-white fw-bold'>View plans</button></Link>
+                              <Link className='ps-5' to='/'><button className='btn btn-read btn-brand text-white fw-bold'>Read more</button></Link>
+                              <Link className='ps-5' to='/'><button className='btn btn-view btn-brand text-white fw-bold'>View plans</button></Link>
                         </div>
 
                   </div>
