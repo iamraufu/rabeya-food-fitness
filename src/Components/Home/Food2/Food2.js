@@ -14,8 +14,8 @@ const Food2 = () => {
                               <h6 className="fw-bold">Carbohydrates: <span style={{ color: '#8ec038' }}>49g</span></h6>
                               <h4 className="fw-bold mt-5" style={{ color: 'red' }}>$11.99</h4>
                               <div className="d-flex mt-5">
-                                    <Link className='' to='/appointment'><button className='btn btn-read btn-brand text-white fw-bold'>Add to Cart</button></Link>
-                                    <Link className='ps-5' to='/appointment'><button className='btn btn-view btn-brand text-white fw-bold'>Read More</button></Link>
+                                    <Link className='' to='/'><button className='btn btn-read btn-brand text-white fw-bold'>Read More</button></Link>
+                                    <Link className='ps-5' to='/'><button className='btn btn-view btn-brand text-white fw-bold'>Read More</button></Link>
                               </div>
                         </div>
                         <div className="col-md-6">
