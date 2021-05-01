@@ -33,6 +33,10 @@ function App() {
             <Home />
           </Route>
 
+          <Route path='/home'>
+            <Home />
+          </Route>
+
           <Route path='/products'>
             <Menu />
           </Route>
