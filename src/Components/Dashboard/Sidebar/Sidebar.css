@@ -1,0 +1,3 @@
+.sidebar li:hover {
+    transform: translateX(15px);
+}
