@@ -18,7 +18,7 @@ const Food2 = () => {
                                     <Link className='ps-5' to='/'><button className='btn btn-view btn-brand text-white fw-bold'>Read More</button></Link>
                               </div>
                         </div>
-                        <div className="col-md-6">
+                        <div style={{height:'100px'}} className="col-md-6">
                               <img className='img-fluid food' width={800} src="http://fitmeal.like-themes.com/wp-content/uploads/2018/02/dish_02-1.jpg" alt="" />
                         </div>
                   </div>

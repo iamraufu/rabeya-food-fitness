@@ -7,7 +7,7 @@ const Food1 = () => {
             <div className='container mt-5'>
                         <h1 style={{color:'#2cb978'}} className='text-bold fw-bold text-center'>100% Natural</h1>
                   <div className="d-flex">
-                        <div className="col-md-6">
+                        <div style={{height:'100px'}} className="col-md-6">
                               <img className='img-fluid food' width={800} src="http://fitmeal.like-themes.com/wp-content/uploads/2018/02/dish_01-1.jpg" alt="" />
                         </div>
                         <div className="col-md-6 mt-5">
