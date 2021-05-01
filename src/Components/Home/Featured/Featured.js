@@ -21,7 +21,7 @@ const Featured = () => {
                                     <FontAwesomeIcon className='ms-2' style={{ color: '#8ec038', fontSize: '3em' }} icon={faMobile} />
                                     <h5 className='mt-3 ps-3'>+8801611404405</h5>
                               </div>
-                              <Link className='mt-5' to='/appointment'><button className='btn btn-read btn-brand text-white fw-bold mt-5'>Read more</button></Link>
+                              <Link className='mt-5' to='/'><button className='btn btn-read btn-brand text-white fw-bold mt-5'>Read more</button></Link>
                         </div>
                   </div>
             </div>
