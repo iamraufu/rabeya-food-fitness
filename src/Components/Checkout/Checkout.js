@@ -5,15 +5,11 @@ import { UserContext } from '../../App';
 import ProcessPayment from '../ProcessPayment/ProcessPayment';
 
 const Checkout = () => {
-      const { register, handleSubmit, formState: { errors } } = useForm();
+      const { register, handleSubmit, watch, formState: { errors } } = useForm();
       // eslint-disable-next-line
       const [loggedInUser, setLoggedInUser] = useContext(UserContext);
       // eslint-disable-next-line
       const [shippingData, setShippingData] = useState(null);
-
-      const onSubmit = data => {
-            setShippingData(data);
-      };
 
       const { id } = useParams();
       const [item, setItem] = useState([]);
@@ -24,9 +20,42 @@ const Checkout = () => {
                   .then(data => setItem(data))
       }, [id])
 
+      const onSubmit = data => {
+            setShippingData(data);
+      };
+
+      const handlePaymentSuccess = paymentId => {
+            const savedCart = { item }
+            const orderDetails = {
+                  ...loggedInUser,
+                  products: savedCart,
+                  shipment: shippingData,
+                  paymentId,
+                  orderTime: new Date()
+            };
+
+            fetch('http://localhost:5000/addOrders', {
+                  method: 'POST',
+                  headers: {
+                        'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(orderDetails)
+            })
+                  .then(res => res.json())
+                  .then(data => {
+                        if (data) {
+                              // alert('your order placed successfully');
+                        }
+                  })
+      }
+
+      console.log(watch("example"));
+
+
+
       return (
             <div className="mb-5">
-                  <h1 className='text-center text-info mt-5'>Checkout Now</h1>
+                  <h1 className='text-center text-info mt-1'>Checkout Now</h1>
 
                   <div className='container d-flex'>
 
@@ -36,28 +65,30 @@ const Checkout = () => {
                               <h3 class="text-center">${item.price}</h3>
                         </div>
 
-                        <div className="col-md-6 d-flex">
-                              <ProcessPayment />
+                        <div className="col-md-6">
+                              <p class='mt-5 text-danger fs-4 text-center'>Kindly Complete Your Information</p>
+                              <form className="ship-form" onSubmit={handleSubmit(onSubmit)}>
+                                    <input className='form-control p-3 mt-3' defaultValue={loggedInUser.name} {...register("name", { required: true })} placeholder='Your Name' autoComplete='off' />
+                                    {errors.name && <span class='text-danger'>*This field is required</span>}
+
+                                    <input className='form-control p-3 mt-3' defaultValue={loggedInUser.email} {...register("email", { required: true })} placeholder='Enter email' autoComplete='off' />
+                                    {errors.email && <span class='text-danger'>*This field is required</span>}
+
+                                    <input className='form-control p-3 mt-3' {...register("address", { required: true })} placeholder='Enter Address' autoComplete='off' />
+                                    {errors.address && <span class='text-danger'>*This field is required</span>}
+
+                                    <input className='form-control p-3 mt-3' {...register("phone", { required: true })} placeholder='Phone Number' autoComplete='off' />
+                                    {errors.phone && <span class='text-danger'>*This field is required</span>}
+
+                                    {/* <input className='btn btn-info mt-2' type="submit" /> */}
+                                    <button onClick={()=>alert("Information Submitted. Please Pay Now")} className='btn btn-info mt-2' type="submit">Submit Information</button>
+                              </form>
+                              <small>After the submitting the information, please proceed to payment</small>
                         </div>
 
                   </div>
                   <div className="container mt-5">
-                  <p class='mt-5 text-danger fs-4 text-center'>Give your information so that we can deliver product to you</p>
-                        <form className="ship-form" onSubmit={handleSubmit(onSubmit)}>
-                              <input className='form-control p-3 mt-3' {...register("name", { required: true })} placeholder='Your Name' autoComplete='off' />
-                              {errors.name && <span class='text-danger'>*This field is required</span>}
-
-                              <input className='form-control p-3 mt-3' {...register("email", { required: true })} placeholder='Enter email' autoComplete='off' />
-                              {errors.email && <span class='text-danger'>*This field is required</span>}
-
-                              <input className='form-control p-3 mt-3' {...register("address", { required: true })} placeholder='Enter Home Address' autoComplete='off' />
-                              {errors.address && <span class='text-danger'>*This field is required</span>}
-
-                              <input className='form-control p-3 mt-3' {...register("phone", { required: true })} placeholder='Phone Number' autoComplete='off' />
-                              {errors.phone && <span class='text-danger'>*This field is required</span>}
-
-                              <input className='btn btn-info mt-5' type="submit" />
-                        </form>
+                        <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
                   </div>
             </div>
       );

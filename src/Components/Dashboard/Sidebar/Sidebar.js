@@ -13,7 +13,7 @@ const Sidebar = () => {
                               <Link class="nav-link text-dark fw-bold mt-5" aria-current="page" to="/dashboard"><FontAwesomeIcon icon={faGripHorizontal} /> Dashboard</Link>
                         </li>
                         <li class="nav-item text-center">
-                              <Link class="nav-link text-dark fw-bold mt-5" aria-current="page" to="/"><FontAwesomeIcon icon={faHome} /> Home</Link>
+                              <Link class="nav-link text-dark fw-bold mt-5" aria-current="page" to="/home"><FontAwesomeIcon icon={faHome} /> Home</Link>
                         </li>
                         <li class="nav-item text-center">
                               <Link class="nav-link text-dark fw-bold mt-5" aria-current="page" to="/orders"><FontAwesomeIcon icon={faCalendarAlt} /> Orders</Link>

@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { useState } from 'react';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../App';
 
-const SimpleCardForm = () => {
+const SimpleCardForm = ({handlePayment}) => {
   // eslint-disable-next-line
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
   console.log(loggedInUser)
@@ -35,15 +35,16 @@ const SimpleCardForm = () => {
     } else {
       setPaymentSuccess(paymentMethod.id);
       setPaymentError(null);
+      handlePayment(paymentMethod.id)
     }
   };
 
   return (
     <div>
       <h3 className='text-center'>Welcome <span className='text-danger'> {loggedInUser.name}</span></h3>
-      <img className='img-fluid' style={{ borderRadius: '50%' }} src={loggedInUser.photo} alt="" />
+      <img className='img-fluid mx-auto d-block' style={{ borderRadius: '50%' }} src={loggedInUser.photo} alt="" />
       <form onSubmit={handleSubmit}>
-        <h3 className='text-center mt-5'>Pay Now</h3>
+        <h3 className='text-center mt-2'>Pay Now</h3>
         <CardElement />
         <button class='btn btn-success mt-5' type="submit" disabled={!stripe}>
           Pay
@@ -54,8 +55,8 @@ const SimpleCardForm = () => {
       }
       {
         paymentSuccess && <div className="">
-          <p class='mt-5 text-success'>Your payment was successful</p>
-          {/* <a href="/"><button className='btn btn-success'><FontAwesomeIcon icon={faHome} /> Go Home</button></a> */}
+          <p class='mt-3 text-success'>Your Payment Was Successful & Order Placed</p>
+          <a href="/"><button className='btn btn-success'><FontAwesomeIcon icon={faHome} /> Go Home</button></a>
         </div>
       }
     </div>

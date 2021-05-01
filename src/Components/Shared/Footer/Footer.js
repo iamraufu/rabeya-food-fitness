@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
       return (
             <div>
-                  <h1>Footer</h1>
+                  <p className='mt-5 text-center'>Copyright {(new Date()).getFullYear()} All Rights Reserved by Rabeya's Food & Fitness</p>
             </div>
       );
 };
