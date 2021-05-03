@@ -53,9 +53,9 @@ function App() {
             <Reviews />
           </PrivateRoute>
 
-          <PrivateRoute path='/consultation'>
+          <Route path='/consultation'>
             <Consultation />
-          </PrivateRoute>
+          </Route>
 
           <PrivateRoute path='/addAdmin'>
             <AddAdmin />
