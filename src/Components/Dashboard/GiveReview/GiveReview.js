@@ -15,7 +15,7 @@ const GiveReview = () => {
                   quote: data.quote,
                   imageURL: imageURL
             };
-            const url = `http://localhost:5000/addReview`;
+            const url = `https://rabeya-food-fitness.herokuapp.com/addReview`;
 
             fetch(url, {
                   method: 'POST',

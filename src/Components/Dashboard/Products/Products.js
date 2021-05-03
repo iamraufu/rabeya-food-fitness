@@ -14,7 +14,7 @@ const Products = () => {
                   price: data.price,
                   imageURL: imageURL
             };
-            const url = `http://localhost:5000/addFoods`;
+            const url = `https://rabeya-food-fitness.herokuapp.com/addFoods`;
 
             fetch(url, {
                   method: 'POST',
@@ -49,14 +49,14 @@ const Products = () => {
       const [foods, setFoods] = useState([]);
 
       useEffect(() => {
-            fetch("http://localhost:5000/foods")
+            fetch("https://rabeya-food-fitness.herokuapp.com/foods")
                   .then(res => res.json())
                   .then(data => setFoods(data));
       }, [])
 
       const deleteProduct = (id) => {
 
-            fetch(`http://localhost:5000/delete/${id}`, {
+            fetch(`https://rabeya-food-fitness.herokuapp.com/delete/${id}`, {
                   method: 'DELETE'
             })
                   .then(res => res.json())

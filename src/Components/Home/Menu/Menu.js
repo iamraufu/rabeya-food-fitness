@@ -7,7 +7,7 @@ const Menu = () => {
       const [food, setFood] = useState([]);
 
       useEffect(() => {
-            fetch('http://localhost:5000/foods')
+            fetch('https://rabeya-food-fitness.herokuapp.com/foods')
                   .then(res => res.json())
                   .then(data => setFood(data))
       }, [])

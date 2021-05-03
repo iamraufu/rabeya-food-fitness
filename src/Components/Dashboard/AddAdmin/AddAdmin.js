@@ -7,7 +7,7 @@ const AddAdmin = () => {
 
       const onSubmit = data => {
 
-            fetch('http://localhost:5000/addAdmin', {
+            fetch('https://rabeya-food-fitness.herokuapp.com/addAdmin', {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({ email: data.email })
@@ -18,7 +18,7 @@ const AddAdmin = () => {
 
       const [admin, setAdmin] = useState([]);
       useEffect(() => {
-            fetch('http://localhost:5000/admins')
+            fetch('https://rabeya-food-fitness.herokuapp.com/admins')
                   .then(res => res.json())
                   .then(data => setAdmin(data))
       }, [])

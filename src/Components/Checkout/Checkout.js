@@ -15,7 +15,7 @@ const Checkout = () => {
       const [item, setItem] = useState([]);
 
       useEffect(() => {
-            fetch(`http://localhost:5000/foods/` + id)
+            fetch(`https://rabeya-food-fitness.herokuapp.com/foods/` + id)
                   .then(res => res.json())
                   .then(data => setItem(data))
       }, [id])
@@ -34,7 +34,7 @@ const Checkout = () => {
                   orderTime: new Date()
             };
 
-            fetch('http://localhost:5000/addOrders', {
+            fetch('https://rabeya-food-fitness.herokuapp.com/addOrders', {
                   method: 'POST',
                   headers: {
                         'Content-Type': 'application/json'
